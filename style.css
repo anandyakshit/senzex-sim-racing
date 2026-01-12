@@ -1,26 +1,29 @@
-``css
-/* Global Reset */
+/* =========================
+   Global Reset
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    /* Existing styles */
-    min-height: 100vh;
+/* =========================
+   Root & Base
+========================= */
+html {
+    min-height: 100%;
+    font-size: 16px;
     scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
-    background: url('Images/background.jpg') center/cover no-repeat fixed;
-    color: #eee;
+}
 
-    /* Flexbox for layout */
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #eee;
+    background: url('Images/background.jpg') center / cover no-repeat fixed;
     display: flex;
     flex-direction: column;
-
-    /* Explicitly set margin and padding to 0 */
     margin: 0;
-    padding: 0;
 }
 
 a {
@@ -29,7 +32,9 @@ a {
     cursor: pointer;
 }
 
-/* Header */
+/* =========================
+   Header / Navbar
+========================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -64,7 +69,9 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Hero Section */
+/* =========================
+   Hero Section
+========================= */
 .hero {
     display: flex;
     flex-direction: column;
@@ -72,11 +79,14 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('https://images.unsplash.com/photo-1600251601883-9d2fc115823f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1600251601883-9d2fc115823f?auto=format&fit=crop&w=1350&q=80')
+        center / cover no-repeat;
 }
 
-.hero h1, .hero p {
+.hero h1,
+.hero p {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
     border-radius: 10px;
@@ -89,7 +99,7 @@ nav ul li a:hover {
     padding: 14px 30px;
     border-radius: 8px;
     border: none;
-    font-size: 18px;
+    font-size: 1.125rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -100,7 +110,12 @@ nav ul li a:hover {
     box-shadow: 0 4px 15px rgba(255,77,77,0.4);
 }
 
-.about-section, .terms-section, .disclaimer-section {
+/* =========================
+   Content Sections
+========================= */
+.about-section,
+.terms-section,
+.disclaimer-section {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
@@ -109,15 +124,19 @@ nav ul li a:hover {
     border-radius: 15px;
 }
 
-.about-section h2, .terms-section h2, .disclaimer-section h2 {
-    font-size: 32px;
+.about-section h2,
+.terms-section h2,
+.disclaimer-section h2 {
+    font-size: 2rem;
     font-weight: 700;
-    color: #ffffff;
     margin-bottom: 20px;
+    color: #fff;
 }
 
-.about-section p, .terms-section p, .disclaimer-section p {
-    font-size: 18px;
+.about-section p,
+.terms-section p,
+.disclaimer-section p {
+    font-size: 1.125rem;
     line-height: 1.6;
     color: #ccc;
     margin-bottom: 20px;
@@ -125,11 +144,11 @@ nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
     border-radius: 8px;
-    display: block; /* Ensures full-width background */
 }
 
-
-/* Contact Form */
+/* =========================
+   Contact Section
+========================= */
 .contact-section {
     max-width: 700px;
     margin: 40px auto;
@@ -141,28 +160,8 @@ nav ul li a:hover {
 .contact-form label {
     display: block;
     font-weight: 600;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin: 15px 0 5px;
 }
-.ad-section {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.ad-placeholder {
-    width: 728px;   /* typical leaderboard ad */
-    height: 90px;
-    background-color: rgba(255, 77, 77, 0.2);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed #ff4d4d;
-    border-radius: 8px;
-    font-size: 18px;
-}
-
 
 .contact-form span {
     color: red;
@@ -192,7 +191,7 @@ nav ul li a:hover {
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -202,26 +201,46 @@ nav ul li a:hover {
     box-shadow: 0 4px 12px rgba(255,77,77,0.3);
 }
 
-/* PDF Download Section */
+/* =========================
+   Ad Section
+========================= */
+.ad-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.ad-placeholder {
+    width: 100%;
+    max-width: 728px;
+    height: 90px;
+    background-color: rgba(255, 77, 77, 0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ff4d4d;
+    border-radius: 8px;
+    font-size: 1.125rem;
+}
+
+/* =========================
+   Main / PDF Section
+========================= */
+main {
+    flex-grow: 1;
+}
+
 .pdf-section {
     max-width: 1200px;
     text-align: center;
     margin: 50px auto;
     padding: 0 20px;
-    /* Remove flex-grow from here if applying to main tag */
 }
-
-main { /* Added styles for the main tag */
-    flex-grow: 1;
-    /* Potentially add padding here instead of .pdf-section if desired */
-}
-
 
 .pdf-section h2 {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 2.25rem;
     margin-bottom: 40px;
-    color: #ffffff;
 }
 
 .pdf-grid {
@@ -232,16 +251,14 @@ main { /* Added styles for the main tag */
     margin: 0 auto;
 }
 
-
 .pdf-card {
     background-color: #1a1a1a;
     border-radius: 15px;
-    overflow: hidden;
     padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pdf-card:hover {
@@ -250,13 +267,13 @@ main { /* Added styles for the main tag */
 }
 
 .pdf-content h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 10px;
     color: #ff4d4d;
 }
 
 .pdf-content p {
-    font-size: 15px;
+    font-size: 0.95rem;
     color: #aaa;
     margin-bottom: 15px;
 }
@@ -268,7 +285,7 @@ main { /* Added styles for the main tag */
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -278,46 +295,52 @@ main { /* Added styles for the main tag */
     box-shadow: 0 4px 12px rgba(255,77,77,0.3);
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #111;
     color: #ccc;
-    /* margin-top: auto; */ /* Removed as flex-grow on main handles this */
 }
 
-/* Responsive */
+/* =========================
+   Responsive (Mobile)
+========================= */
 @media (max-width: 768px) {
 
-	.ad-placeholder {
+    header {
+        padding: 15px 20px;
+    }
 
-		width: 90%;
-		height: 100px;
-		font-size: 16px;
-	}
     nav ul {
         flex-direction: column;
         gap: 10px;
     }
 
+    body {
+        background-attachment: scroll;
+    }
+
     .hero h1 {
-        font-size: 32px;
+        font-size: 2rem;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
-    .pdf-section h2 {
-        font-size: 28px;
+    .about-section h2,
+    .terms-section h2,
+    .disclaimer-section h2 {
+        font-size: 1.75rem;
     }
 
-    .about-section h2, .terms-section h2, .disclaimer-section h2 {
-        font-size: 28px;
+    .about-section p,
+    .terms-section p,
+    .disclaimer-section p {
+        font-size: 1rem;
     }
 
-    .about-section p, .terms-section p, .disclaimer-section p {
-        font-size: 16px;
-    }
-}
+    .pdf-sect
