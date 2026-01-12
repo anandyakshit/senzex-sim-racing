@@ -1,0 +1,323 @@
+``css
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    /* Existing styles */
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    background: url('Images/background.jpg') center/cover no-repeat fixed;
+    color: #eee;
+
+    /* Flexbox for layout */
+    display: flex;
+    flex-direction: column;
+
+    /* Explicitly set margin and padding to 0 */
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff4d4d;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4d79ff;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1600251601883-9d2fc115823f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+}
+
+.hero h1, .hero p {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #4d79ff;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e64040;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,77,77,0.4);
+}
+
+.about-section, .terms-section, .disclaimer-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(15, 15, 15, 0.8);
+    border-radius: 15px;
+}
+
+.about-section h2, .terms-section h2, .disclaimer-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.about-section p, .terms-section p, .disclaimer-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+    text-align: justify;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: block; /* Ensures full-width background */
+}
+
+
+/* Contact Form */
+.contact-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(15, 15, 15, 0.8);
+    border-radius: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.ad-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.ad-placeholder {
+    width: 728px;   /* typical leaderboard ad */
+    height: 90px;
+    background-color: rgba(255, 77, 77, 0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ff4d4d;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+
+.contact-form span {
+    color: red;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #1a1a1a;
+    color: #eee;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.submit-btn {
+    background-color: #4d79ff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e64040;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,77,77,0.3);
+}
+
+/* PDF Download Section */
+.pdf-section {
+    max-width: 1200px;
+    text-align: center;
+    margin: 50px auto;
+    padding: 0 20px;
+    /* Remove flex-grow from here if applying to main tag */
+}
+
+main { /* Added styles for the main tag */
+    flex-grow: 1;
+    /* Potentially add padding here instead of .pdf-section if desired */
+}
+
+
+.pdf-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.pdf-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.pdf-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255,77,77,0.2);
+}
+
+.pdf-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+}
+
+.pdf-content p {
+    font-size: 15px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    background-color: #4d79ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #e64040;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,77,77,0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #ccc;
+    /* margin-top: auto; */ /* Removed as flex-grow on main handles this */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+	.ad-placeholder {
+
+		width: 90%;
+		height: 100px;
+		font-size: 16px;
+	}
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .pdf-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section h2, .terms-section h2, .disclaimer-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section p, .terms-section p, .disclaimer-section p {
+        font-size: 16px;
+    }
+}
