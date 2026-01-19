@@ -86,11 +86,34 @@
 
         <p>© 2026 Senzex Gaming. All rights reserved.</p>
     </footer>
+	<script>
+// Location-based redirection
+fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => {
+    const country = data.country; // e.g., 'IN' for India
+    console.log('User country:', country);
+
+    if (country === 'IN') {
+      window.location.href = 'https://forms.gle/L8JhCyXqoJNTXnNs5';
+    } else {
+      window.location.href = 'https://senzex.gumroad.com/l/sim-racing-fundamentals';
+    }
+  })
+  .catch(err => {
+    console.error('Location fetch error:', err);
+    // Fallback: redirect to Gumroad if API fails
+    window.location.href = 'https://senzex.gumroad.com/l/sim-racing-fundamentals';
+  });
+</script>
+
+	
 
 </body>
 
 
 </html>
+
 
 
 
